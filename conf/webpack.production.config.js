@@ -14,23 +14,12 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
         'style-loader',
         {
           loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: "[hash:base64:10]",
-            minimize: true
-          }
-        },
-        {
-          loader: 'postcss-loader', // Run post css actions
-          options: {
-            plugins: function () { // post css plugins, can be exported to postcss.config.js
-              return [
-                require('precss'),
-                require('autoprefixer')
-              ];
-            }
-          }
+          // options: {
+          //   modules: true,
+          //   importLoaders: 1,
+          //   localIdentName: "[hash:base64:10]",
+          //   minimize: true
+          // }
         },
         {
           loader: 'postcss-loader',
