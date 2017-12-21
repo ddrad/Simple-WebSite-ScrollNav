@@ -1,5 +1,7 @@
 import webpack from 'webpack';
 import Config from 'webpack-config';
+import autoprefixer from 'autoprefixer';
+import precss from 'precss';
 
 export default new Config().extend('conf/webpack.base.config.js').merge({
   output: {
@@ -7,7 +9,7 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
   },
   module: {
     loaders: [{
-      test: /\.css$/,
+      test: /\.(scss)$/,
       use: [
         'style-loader',
         {
@@ -29,14 +31,12 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
               ];
             }
           }
+        },
+        {
+          loader: 'postcss-loader',
+          options: { plugins: [precss(), autoprefixer()]}
         }, {
           loader: 'sass-loader', // compiles SASS to CSS
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: "[hash:base64:10]",
-            minimize: true
-          }
         }
       ]
     },

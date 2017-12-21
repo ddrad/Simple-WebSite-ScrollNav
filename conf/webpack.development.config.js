@@ -1,4 +1,6 @@
 import Config from 'webpack-config';
+import autoprefixer from 'autoprefixer';
+import precss from 'precss';
 
 export default new Config().extend('conf/webpack.base.config.js').merge({
   output: {
@@ -11,18 +13,19 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
         loader: 'style-loader', // inject CSS to page
       }, {
         loader: 'css-loader', // translates CSS into CommonJS modules
-      }, {
-        loader: 'postcss-loader', // Run post css actions
         options: {
-          plugins: function () { // post css plugins, can be exported to postcss.config.js
-            return [
-              require('precss'),
-              require('autoprefixer')
-            ];
-          }
+          modules: true,
+          importLoaders: 1,
+          localIdentName: "[local]__[hash:base64:5]",
+          minimize: false
         }
-      }, {
-        loader: 'sass-loader' // compiles SASS to CSS
+      },
+      { 
+        loader: 'postcss-loader',
+        options: { plugins: [precss(), autoprefixer()]}
+      },
+      {
+        loader: 'sass-loader', // compiles SASS to CSS
       }]
     },
     {

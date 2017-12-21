@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import precss from 'precss';
 
+
 export default new Config().merge({
   entry: './src/app.js',
   output: {
@@ -22,5 +23,6 @@ export default new Config().merge({
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: "body"
-    })]
+    })
+  ]
 });
