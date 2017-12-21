@@ -13,12 +13,12 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
         loader: 'style-loader', // inject CSS to page
       }, {
         loader: 'css-loader', // translates CSS into CommonJS modules
-        options: {
-          modules: true,
-          importLoaders: 1,
-          localIdentName: "[local]__[hash:base64:5]",
-          minimize: false
-        }
+        // options: {
+        //   modules: true,
+        //   importLoaders: 1,
+        //   localIdentName: "[local]__[hash:base64:5]",
+        //   minimize: false
+        // }
       },
       { 
         loader: 'postcss-loader',

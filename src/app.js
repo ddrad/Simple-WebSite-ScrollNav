@@ -23,6 +23,9 @@ $(document).ready(function () {
   $(".add_tag button").click(function () {
     let p = window.location.hash;
     let s = '';
+    if(p.length === 0){
+      p="#tags=";
+    }
     if(p.slice().split("=")[1]) {
       s = ',';
     }
