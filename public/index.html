@@ -1,92 +1,121 @@
 <!DOCTYPE HTML>
 
-<!--============================================================
+<html lang="en">
 
-*   Design: ...
-*   Copyright (c) 2015: ...
-
-=============================================================-->
-
-<html lang="ru">
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Test</title>
+    <meta name="description" content="Описание сайта">
+    <meta name="keywords" content="Ключевые слова сайта">
+    <meta name="author" content="SergeyChunkevich.com">
 
-<!-- для адаптивного дизайна -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- информация о сайте -->
-<title>Впишите заголовок сайта</title>
-<meta name="description" content="Описание сайта">
-<meta name="keywords" content="Ключевые слова сайта">
-<meta name="author" content="SergeyChunkevich.com">
-
-<!-- иконка для сайта -->
-<!-- <link rel="shortcut icon" href="favicon.ico"> -->
-
-<!-- CSS -->
-<!-- <link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/main.css"> -->
-<!-- <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> -->
-
-<!-- Это для старого осла, чтобы он понял HTML5 теги -->
-<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
 
 <body>
-<!--===== ШАПКА САЙТА =====-->
-<div class="container" role="banner">
-    <header>
-        <!-- логотип -->
-        <a href="#">Логотип</a>
-        <!-- меню -->
-        <nav class="" role="navigation">
-            <ul class="navbar-nav mr-auto">
-                <li><a href="#">Страница 1</a></li>
-                <li><a href="#">Страница 2</a></li>
-                <li><a href="#">Страница 3</a></li>
-            </ul>
-        </nav>
-    </header>
-</div>
-
-<!--===== КОНТЕНТ =====-->
-<div id="main-container">
-    <main role="main">
-
-        <!-- блок 1 | ... -->
-        <section>
-
-            <header>
-                <h1></h1>
-            </header>
-
-            <article>
-                <h3></h3>
-                <p></p>
-            </article>
-
-        </section>
-
-        <!-- блок 2 | ... -->
-        <section>
-        <input type="text" />
-        </section>
-
-    </main>
-
-</div>
-
-<!--===== ПОДВАЛ САЙТА =====-->
-<div id="footer-container" role="contentinfo">
-    <footer>
-        <p></p>
-        <small>Copyright &copy; <time datetime="2015">2015</time></small>
-    </footer>
-</div>
-
-<script type="text/javascript" src="bundle.js"></script></body>
-</html>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="logo_text">
+                    <!-- class="logo_colour", allows you to change the colour of the text -->
+                    <h1>
+                        <a href="index.html">Dmitry's Solution
+                            <span class="logo_colour">for Lukáš Král</span>
+                        </a>
+                    </h1>
+                    <h2>Using webpack es6 sass jquery</h2>
+                </div>
+            </div>
+            <div id="menubar">
+                <ul id="menu">
+                    <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+                    <li class="selected">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Examples</a>
+                    </li>
+                    <li>
+                        <a href="#">A Page</a>
+                    </li>
+                    <li>
+                        <a href="#">Another Page</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content_header"></div>
+        <div id="site_content">
+            <div id="banner"></div>
+            <div id="sidebar_container">
+                <div class="sidebar">
+                    <div class="sidebar_top"></div>
+                    <div class="sidebar_item">
+                        <!-- insert your sidebar items here -->
+                        <h3>Div for News</h3>
+                        <h4>Title News</h4>
+                        <h5>Desember 12th, 2017</h5>
+                        <p>Description for new or article.<br /><a href="#">Read more</a></p>
+                    </div>
+                    <div class="sidebar_base"></div>
+                  </div>
+                  <div class="sidebar">
+                    <div class="sidebar_top"></div>
+                    <div class="sidebar_item">
+                      <h3>Useful Links</h3>
+                      <ul>
+                        <li><a href="#">link 1</a></li>
+                        <li><a href="#">link 2</a></li>
+                        <li><a href="#">link 3</a></li>
+                        <li><a href="#">link 4</a></li>
+                      </ul>
+                    </div>
+                    <div class="sidebar_base"></div>
+                  </div>
+                  <div class="sidebar">
+                    <div class="sidebar_top"></div>
+                    <div class="sidebar_item">
+                      <h3>Search</h3>
+                      <form method="post" action="#" id="search_form">
+                        <p>
+                          <input class="search" type="text" name="search_field" value="Enter keywords....." />
+                          <button>Search</button> 
+                        </p>
+                      </form>
+                    </div>
+                    <div class="sidebar_base"></div>
+                  </div>
+                </div>
+                <div id="content">
+                  <!-- insert the page content here -->
+                  <div class="add_tag">
+                    <p>Add New Tag:</p>
+                    <input class="add_tag" type="text" name="add_tag_field" />
+                    <button disabled="true">Add New Tag</button> 
+                  </div>
+                  <div class="remove_tag">
+                    <p>Remove existing Tag:</p>
+                    <button>Remove</button> 
+                  </div>
+                  <h1>Arguments of List:</h1>
+                  <ul class="app-list">
+                  </ul>
+                </div>
+              </div>
+              <div id="content_footer"></div>
+              <div id="footer">
+                <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+                <p>Copyright &copy; simplestyle_banner | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">HTML5 Web Templates</a></p>
+              </div>
+            </div>
+          <script type="text/javascript" src="bundle.min.js"></script></body>
+          </html>
+          

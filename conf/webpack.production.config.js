@@ -19,9 +19,46 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
             minimize: true
           }
         },
-        { loader: 'postcss-loader' },
+        {
+          loader: 'postcss-loader', // Run post css actions
+          options: {
+            plugins: function () { // post css plugins, can be exported to postcss.config.js
+              return [
+                require('precss'),
+                require('autoprefixer')
+              ];
+            }
+          }
+        }, {
+          loader: 'sass-loader', // compiles SASS to CSS
+          options: {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: "[hash:base64:10]",
+            minimize: true
+          }
+        }
       ]
-    }]
+    },
+    {
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'img/[name][hash].[ext]'
+        }
+      }, {
+        loader: 'image-webpack-loader',
+        options: {
+          mozjpeg: {
+            progressive: true,
+            quality: 70
+          }
+        }
+      },
+      ],
+    },
+    ]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
