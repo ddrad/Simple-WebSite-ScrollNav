@@ -6,65 +6,65 @@ $darc_grey: #5D5D5D;
 html {
     height: 100%;
   }
-  
+
   * {
     margin: 0;
     padding: 0;
   }
-  
+
   body {
     font: normal .80em 'trebuchet ms', arial, sans-serif;
     background: $white;
     color: #555;
   }
-  
+
   p {
     padding: 0 0 20px 0;
     line-height: 1.7em;
   }
-  
+
   img {
     border: 0;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     color: #362C20;
     letter-spacing: 0em;
     padding: 0 0 5px 0;
   }
-  
+
   h1, h2, h3 {
     font: normal 170% 'century gothic', arial;
     margin: 0 0 15px 0;
     padding: 15px 0 5px 0;
     color: #000;
   }
-  
+
   h2 {
     font-size: 160%;
     padding: 9px 0 5px 0;
     color: $blue;
   }
-  
+
   h3 {
     font-size: 140%;
     padding: 5px 0 0 0;
   }
-  
+
   h4, h6 {
     color: $blue;
     padding: 0 0 5px 0;
     font: normal 110% arial;
     text-transform: uppercase;
   }
-  
+
   h5, h6 {
     color: #888;
     font: normal 95% arial;
     letter-spacing: normal;
     padding: 0 0 15px 0;
   }
-  
+
   a {
     outline: none;
     text-decoration: underline;
@@ -76,14 +76,14 @@ html {
       text-decoration: none;
     }
   }
-  
+
   blockquote {
     margin: 20px 0;
     padding: 10px 20px 0 20px;
     border: 1px solid #E5E5DB;
     background: $white;
   }
-  
+
   ul {
     margin: 2px 0 22px 17px;
     li {
@@ -93,50 +93,50 @@ html {
       line-height: 1.5em;
     }
   }
-  
+
   ol {
     margin: 8px 0 22px 20px;
     li {
       margin: 0 0 11px 0;
     }
   }
-  
+
   .left {
     float: left;
     width: auto;
     margin-right: 10px;
   }
-  
+
   .right {
     float: right;
     width: auto;
     margin-left: 10px;
   }
-  
+
   .center {
     display: block;
     text-align: center;
     margin: 20px auto;
   }
-  
+
   #main, #logo, #menubar, #site_content, #footer {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   #header {
     background: #323534;
     height: 177px;
   }
-  
+
   #banner {
-    // background: transparent url(banner.jpg) no-repeat;
+    //background: transparent url(banner.jpg) no-repeat;
     width: 860px;
     height: 180px;
     margin-bottom: 20px;
     border: 10px solid #DDD;
   }
-  
+
   #logo {
     width: 880px;
     position: relative;
@@ -154,7 +154,7 @@ html {
       margin: 0 0 0 9px;
     }
   }
-  
+
   #logo_text {
     h1 {
       padding: 22px 0 0 0;
@@ -186,12 +186,12 @@ html {
       color: #999;
     }
   }
-  
+
   #menubar {
     width: 880px;
     height: 46px;
   }
-  
+
   ul#menu {
     float: right;
     margin: 0;
@@ -231,44 +231,44 @@ html {
       }
     }
   }
-  
+
   #site_content {
     width: 880px;
     overflow: hidden;
     margin: 20px auto 0 auto;
     padding: 0 0 10px 0;
   }
-  
+
   #sidebar_container {
     float: right;
     width: 224px;
   }
-  
+
   .sidebar_top {
     width: 222px;
     height: 14px;
    background: transparent url(../img/side_top.png) no-repeat;
   }
-  
+
   .sidebar_base {
     width: 222px;
     height: 14px;
     background: url(../img/side_base.png) no-repeat;
   }
-  
+
   .sidebar {
     float: right;
     width: 222px;
     padding: 0;
     margin: 0 0 16px 0;
   }
-  
+
   .sidebar_item {
     background: url(../img/side_back.png) repeat-y;
     padding: 0 15px;
     width: 192px;
   }
-  
+
   .sidebar {
     li a.selected {
       color: #444;
@@ -280,10 +280,10 @@ html {
         padding: 5px;
         border: 1px solid $light_grey;
         margin: 5px 0 0 0;
-        font-size: 85%;    
+        font-size: 85%;
     }
   }
-  
+
   #content {
     text-align: left;
     width: 620px;
@@ -328,7 +328,7 @@ html {
       }
     }
   }
-  
+
   .sidebar ul li {
     list-style-type: none;
     background: url(../img/bullet.png) no-repeat;
@@ -336,7 +336,7 @@ html {
     padding: 0 0 4px 25px;
     line-height: 1.5em;
   }
-  
+
   #footer {
     width: 100%;
     font-family: 'trebuchet ms', sans-serif;
@@ -359,7 +359,7 @@ html {
       }
     }
   }
-  
+
   .search {
     color: $darc_grey;
     border: 1px solid $light_grey;
@@ -367,7 +367,7 @@ html {
     padding: 4px;
     font: 100% arial, sans-serif;
   }
-  
+
   .form_settings {
     margin: 15px 0 0 0;
     p {
@@ -414,7 +414,7 @@ html {
       background: none;
     }
   }
-  
+
   .separator {
     width: 100%;
     height: 0;
@@ -422,7 +422,7 @@ html {
     border-bottom: 1px solid $white;
     margin: 0 0 20px 0;
   }
-  
+
   table {
     margin: 10px 0 30px 0;
     tr {

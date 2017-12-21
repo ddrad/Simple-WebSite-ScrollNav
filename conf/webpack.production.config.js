@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import Config from 'webpack-config';
 import autoprefixer from 'autoprefixer';
 import precss from 'precss';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default new Config().extend('conf/webpack.base.config.js').merge({
   output: {
@@ -10,25 +11,32 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
   module: {
     loaders: [{
       test: /\.(scss)$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          // options: {
-          //   modules: true,
-          //   importLoaders: 1,
-          //   localIdentName: "[hash:base64:10]",
-          //   minimize: true
-          // }
-        },
-        {
-          loader: 'postcss-loader',
-          options: { plugins: [precss(), autoprefixer()]}
-        }, {
-          loader: 'sass-loader', // compiles SASS to CSS
-        }
-      ]
-    },
+      use: ExtractTextPlugin.extract({
+                    use: [
+                      {
+                      loader: "css-loader",
+                        options: {
+                          modules: false,
+                          importLoaders: 2,
+                          localIdentName: "[local]__[hash:base64:5]",
+                        }
+                    },
+                    {
+                      loader: "sass-loader",
+                       options: {
+                            sourceMap: false
+                      }
+                    },
+                    {
+                      loader: 'postcss-loader',
+                      options: {
+                        plugins: [precss(), autoprefixer()]
+                      }
+                    }
+                  ],
+                  fallback: "style-loader"
+                })
+      },
     {
       test: /\.(gif|png|jpe?g|svg)$/i,
       use: [{

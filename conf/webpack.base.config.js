@@ -3,6 +3,7 @@ import Config from 'webpack-config';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import precss from 'precss';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 
 export default new Config().merge({
@@ -23,6 +24,7 @@ export default new Config().merge({
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: "body"
-    })
+    }),
+    new ExtractTextPlugin("bundle.min.css"),
   ]
 });
