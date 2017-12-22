@@ -8,7 +8,7 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
     filename: 'bundle.js'
   },
   module: {
-    loaders: [  {
+    rules: [  {
       test: /\.(scss)$/,
       use: ExtractTextPlugin.extract({
                     use: [

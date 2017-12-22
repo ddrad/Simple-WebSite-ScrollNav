@@ -7,18 +7,31 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 
 export default new Config().merge({
-  entry: './src/app.js',
+  entry: './src/app.ts',
   output: {
     path: __dirname + '/../public',
   },
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',  
+        exclude: /node_modules/,     
+      },
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
       }
     ]
+  },
+  resolve: {
+      extensions: [ '.tsx', '.ts', '.js' ]
   },
   plugins: [
     new HtmlWebpackPlugin({
