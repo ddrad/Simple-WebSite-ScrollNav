@@ -147,6 +147,17 @@ html {
       top: 10px;
       left: 0;
     }
+     #photo {
+      background: transparent url(../img/templ.png) no-repeat ;
+      border-color: #AEB002;
+      border-width: 10px;
+      border-style: solid;
+      border-radius: 50%;
+      position: absolute;
+      right:0;
+      width: 190px;
+      height: 190px;
+    }
     h1, h2 {
       font: normal 300% 'century gothic', arial, sans-serif;
       border-bottom: 0;
@@ -193,7 +204,7 @@ html {
   }
 
   ul#menu {
-    float: right;
+    // float: right;
     margin: 0;
     li {
       float: left;
@@ -230,6 +241,10 @@ html {
         color: #E4EC04;
       }
     }
+  }
+
+  #content_header {
+    height: 33px;
   }
 
   #site_content {

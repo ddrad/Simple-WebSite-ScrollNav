@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "set NODE_ENV=development&& webpack-dev-server --colors --hot --progress",
+    "start": "set NODE_ENV=development&& webpack-dev-server --colors --hot --progress --port 9000",
     "build-dev": "set NODE_ENV=development&& webpack --progress",
     "build-prod": "set NODE_ENV=production&& webpack --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ddrad/Simple_1.git"
+    "url": "git://github.com/ddrad/aws.git"
   },
   "dependencies": {
     "@types/jquery": "^3.2.17",
