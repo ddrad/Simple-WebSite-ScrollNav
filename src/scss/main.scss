@@ -127,6 +127,8 @@ html {
   #header {
     background: #323534;
     height: 177px;
+    position: fixed;
+    width: 100%;
   }
 
   #banner {
@@ -249,7 +251,7 @@ html {
   }
 
   #content_header {
-    height: 33px;
+    height: 210px;
   }
 
   #site_content {
