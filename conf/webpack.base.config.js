@@ -7,7 +7,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 
 export default new Config().merge({
-  entry: './src/app.ts',
+  entry: './src/app.js',
   output: {
     path: __dirname + '/../public',
   },
