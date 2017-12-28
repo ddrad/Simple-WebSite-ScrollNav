@@ -203,6 +203,11 @@ html {
     height: 46px;
   }
 
+  .fixed {
+    position:fixed;
+    top:0;
+  }
+
   ul#menu {
     // float: right;
     margin: 0;
