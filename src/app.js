@@ -2,6 +2,9 @@ import './scss/main.scss';
 import $ from "jquery";
 
 $(document).ready(function () {
+
+  loadContent();
+
   let elementHeader = $('#header');
   let elementContentHeader = $('#content_header');
   let headerOffset = elementHeader.offset();
@@ -19,12 +22,12 @@ $(document).ready(function () {
   $(window).on('hashchange', function () {
     let target = location.hash;
     if (target) {
-       return goToSection(target, event);
+      return goToSection(target, event);
     }
     //  console.log(target);
     //   console.log($('ul#menu li a'));
     //  console.log($('ul#menu li a[href="'+target+'"]'));//
-   // $('ul#menu li a[href="'+target+'"]').trigger('click');
+    // $('ul#menu li a[href="'+target+'"]').trigger('click');
   });
 
   $(window).on('resize', function () {
@@ -35,9 +38,9 @@ $(document).ready(function () {
     addEventListener('scroll', function () { return onScroll(contentHeaderHeight); })
   }).resize();
 
-  $(window).on('scroll', function () {return onScroll(contentHeaderHeight);});
+  $(window).on('scroll', function () { return onScroll(contentHeaderHeight); });
 
-  $('ul#menu li a').on('click', function () {return goToSection(this.hash, event) });
+  $('ul#menu li a').on('click', function () { return goToSection(this.hash, event) });
 });
 
 function onScroll(contentHeaderHeight) {
@@ -57,7 +60,6 @@ function onScroll(contentHeaderHeight) {
 //smoothscroll
 function goToSection(target, e) {
   e.preventDefault();
-  console.log(e);
   $(document).off("scroll");
   // let target = this.hash;
   let menu = target;
@@ -81,6 +83,24 @@ function defineMenuPosition($this, changePosition) {
   }
 }
 
-function locationHashChanged() {
-  console.log('lalalalas');
+function loadContent() {
+  fetch('/data.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (let key in data) {
+        $('<section>', {
+          id: key,
+          class: 'section',
+          append: $('<h2>', {
+            text: data[key].title
+          })
+            .add($('<p>', {
+              text: data[key].content
+            }))
+        }).appendTo('#content');
+      }
+    })
+    .catch(alert);
 }
