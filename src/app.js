@@ -1,5 +1,6 @@
 import './scss/main.scss';
-import $ from "jquery";
+import $ from 'jquery';
+import * as data from '../data/data.json';
 
 $(document).ready(function () {
 
